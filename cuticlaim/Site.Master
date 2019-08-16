@@ -2,24 +2,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Mindwave.my</title>
-    <asp:ContentPlaceHolder ID="HeadPageScriptContent" runat="server"></asp:ContentPlaceHolder>
+    <title>Mindwave Consultancy</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+   <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
 </head>
-<body>
-    <style>
-        body 
-        {
-            background-color: #f7fef2;
-        }
-    </style>
+
+<body style="background-color: #f7fef2">
+    
     <form id="form1" runat="server">
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <asp:ContentPlaceHolder ID="Content" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>

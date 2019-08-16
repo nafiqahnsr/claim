@@ -19,4 +19,13 @@
         GridView1.PageIndex = e.NewPageIndex
         BindGridView()
     End Sub
+
+    Private Sub GridView1_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GridView1.RowDataBound
+        If e.Row.RowIndex <> -1 Then
+            Dim hyperlink1 As HyperLink = CType(e.Row.FindControl("HyperLink1"), HyperLink)
+
+            hyperlink1.Text = "Edit"
+            hyperlink1.NavigateUrl = "" & e.Row.DataItem("STAFF_ID")
+        End If
+    End Sub
 End Class
