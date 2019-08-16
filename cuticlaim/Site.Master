@@ -1,0 +1,25 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="cuticlaim.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Mindwave.my</title>
+    <asp:ContentPlaceHolder ID="HeadPageScriptContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <style>
+        body 
+        {
+            background-color: #f7fef2;
+        }
+    </style>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>
