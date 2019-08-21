@@ -25,7 +25,7 @@
             Dim hyperlink1 As HyperLink = CType(e.Row.FindControl("HyperLink1"), HyperLink)
 
             hyperlink1.Text = "Edit"
-            hyperlink1.NavigateUrl = "" & e.Row.DataItem("STAFF_ID")
+            hyperlink1.NavigateUrl = "/cuticlaim/editStaff.aspx?id=" & e.Row.DataItem("STAFF_ID")
         End If
     End Sub
 End Class

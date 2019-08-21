@@ -96,20 +96,36 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="claim\claim.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Dashboard.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\util.css" />
     <Content Include="cuticlaim\Dashboard.aspx" />
     <Content Include="cuticlaim\editStaff.aspx" />
     <Content Include="default.aspx" />
     <Content Include="images\2.jpg" />
+    <Content Include="images\bg-01.jpg" />
     <Content Include="images\header.jpg" />
     <Content Include="images\hi.png" />
+    <Content Include="images\icons\favicon.ico" />
     <Content Include="images\logo.png" />
+    <Content Include="images\logo2.png" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="login.aspx" />
+    <Content Include="offDay\offDay.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="claim\claim.aspx.designer.vb">
+      <DependentUpon>claim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\claim.aspx.vb">
+      <DependentUpon>claim.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="class\mydbvb.vb" />
     <Compile Include="cuticlaim\Dashboard.aspx.designer.vb">
       <DependentUpon>Dashboard.aspx</DependentUpon>
@@ -132,6 +148,13 @@
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -150,6 +173,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="offDay\offDay.aspx.designer.vb">
+      <DependentUpon>offDay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="offDay\offDay.aspx.vb">
+      <DependentUpon>offDay.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>

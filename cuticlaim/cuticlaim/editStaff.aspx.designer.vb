@@ -147,4 +147,13 @@ Partial Public Class editStaff
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents tel1 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''btnSaveDetails control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSaveDetails As Global.System.Web.UI.WebControls.LinkButton
 End Class
