@@ -13,6 +13,7 @@
       <li><a class="active" href="/cuticlaim/Dashboard.aspx">Home</a></li>
       <li><a href="/claim/claim.aspx">Claim</a></li>
       <li><a href="/offDay/offDay.aspx">Off Day</a></li>
+      <li><a href="/login.aspx">Log Out</a></li>
     </ul>
     <br />
 

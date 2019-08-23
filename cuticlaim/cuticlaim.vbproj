@@ -106,6 +106,8 @@
     <Content Include="default.aspx" />
     <Content Include="images\2.jpg" />
     <Content Include="images\bg-01.jpg" />
+    <Content Include="images\bg1.jpg" />
+    <Content Include="images\bg2.jpg" />
     <Content Include="images\header.jpg" />
     <Content Include="images\hi.png" />
     <Content Include="images\icons\favicon.ico" />

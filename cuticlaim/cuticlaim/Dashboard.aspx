@@ -14,6 +14,7 @@
       <li><a class="active" href="/cuticlaim/Dashboard.aspx">Home</a></li>
       <li><a href="/claim/claim.aspx">Claim</a></li>
       <li><a href="/offDay/offDay.aspx">Off Day</a></li>
+      <li><a href="/login.aspx">Log Out</a></li>
     </ul>
     <br />
     <div class="container">
@@ -21,11 +22,11 @@
                 <div class="col-10">
                 <asp:GridView ID ="GridView1" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="10">
                     <Columns>
-                        <asp:BoundField DataField="NAMA" HeaderText="Name" ItemStyle-Width="400"/>
-                        <asp:BoundField DataField="STAFF_ID" HeaderText="Staff ID" ItemStyle-Width="80" />
-                        <asp:BoundField DataField="role_jawatan" HeaderText="Position" ItemStyle-Width="100" />
-                        <asp:BoundField DataField="EMEL" HeaderText="Email" ItemStyle-Width="180" />
-                        <asp:BoundField DataField="TEL1" HeaderText="Phone Number" ItemStyle-Width="150" />
+                        <asp:BoundField DataField="NAMA" HeaderText="Name" ItemStyle-Width="100%"/>
+                        <asp:BoundField DataField="STAFF_ID" HeaderText="Staff ID"/>
+                        <asp:BoundField DataField="role_jawatan" HeaderText="Position"/>
+                        <asp:BoundField DataField="EMEL" HeaderText="Email"/>
+                        <asp:BoundField DataField="TEL1" HeaderText="Phone Number"/>
 
                         <asp:TemplateField HeaderText="Action" ItemStyle-Width="20px" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>

@@ -48,7 +48,7 @@
 					    </span>
 
 					    <span class="login100-form-title p-b-34 p-t-27">
-						    Log in
+						    Mindwave Consultancy
 					    </span>
 
 					    <div class="wrap-input100 validate-input" data-validate = "Enter username">
@@ -63,7 +63,7 @@
 
 					    <div class="container-login100-form-btn" >
 						    <button class="login100-form-btn">
-							    Login
+							    login
 						    </button>
 					    </div>
 				    </form>

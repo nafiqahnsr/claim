@@ -14,6 +14,7 @@
       <li><a class="active" href="/cuticlaim/Dashboard.aspx">Home</a></li>
       <li><a href="/claim/claim.aspx">Claim</a></li>
       <li><a href="/offDay/offDay.aspx">Off Day</a></li>
+      <li><a href="/login.aspx">Log Out</a></li>
     </ul>
     <br />
         <div>
@@ -26,7 +27,7 @@
                     <asp:HiddenField runat="server" ID="idxstafforganisasi" />
 
                     <label>Name</label>
-                    <asp:TextBox ID="name" runat="server" class="form-control" Style="width:300px"></asp:TextBox>                       
+                    <asp:TextBox ID="name" runat="server" class="form-control" Style="width:300px" ReadOnly="true"></asp:TextBox>                       
                                 
                     <label>Email</label>
                     <asp:TextBox ID="email" runat="server" class="form-control" Style="width:300px"></asp:TextBox>                       
@@ -50,7 +51,7 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label>IC/Passport Number</label>
-                        <asp:TextBox ID="ic" runat="server" class="form-control" Style="width:250px" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"></asp:TextBox>                       
+                        <asp:TextBox ID="ic" runat="server" class="form-control" Style="width:250px" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" ReadOnly="true"></asp:TextBox>                       
                                 
                         <label>Staff ID</label>
                         <asp:TextBox ID="staffid" ReadOnly="true" runat="server" class="form-control" Style="width:250px"></asp:TextBox>                       
@@ -80,8 +81,7 @@
             <div class="col-md-12 text-center">
                 <asp:LinkButton runat="server" ID="btnSaveDetails" class="btn btn-primary" Text="<i class='fa fa-save'></i>Save"/>
             </div>
-            <br />
         </div>
         </div>
-
+    <br /><br />
 </asp:Content>

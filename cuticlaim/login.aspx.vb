@@ -13,6 +13,9 @@
         Dim userpass As String = Request("inputPassword")
 
         If Not userlogin = "" Then
+            Dim mydb As New mydb
+            Dim dt As New DataTable()
+            dt = mydb.Search("select NAMA, STAFF_ID, ROLE_JAWATAN, EMEL, TEL1 from tbl_staff;")
 
             If userlogin = "abc" And userpass = "123" Then
                 Session("loginname") = userlogin
