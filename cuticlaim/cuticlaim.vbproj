@@ -119,6 +119,7 @@
     <Content Include="login.aspx" />
     <Content Include="offDay\offDay.aspx" />
     <Content Include="StyleSheet1.css" />
+    <Content Include="User\addUser.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +192,13 @@
     <Compile Include="Site.Master.vb">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\addUser.aspx.designer.vb">
+      <DependentUpon>addUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\addUser.aspx.vb">
+      <DependentUpon>addUser.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
