@@ -10,7 +10,7 @@
     Private Sub BindGridView()
         Dim mydb As New mydb
         Dim dt As New DataTable()
-        dt = mydb.Search("select NAMA, STAFF_ID, ROLE_JAWATAN, EMEL, TEL1 from tbl_staff;")
+        dt = mydb.Search("select idx, NAMA, STAFF_ID, ROLE_JAWATAN, EMEL, TEL1 from tbl_staff;")
         GridView1.DataSource = dt
         GridView1.DataBind()
     End Sub
@@ -25,7 +25,7 @@
             Dim hyperlink1 As HyperLink = CType(e.Row.FindControl("HyperLink1"), HyperLink)
 
             hyperlink1.Text = "Edit"
-            hyperlink1.NavigateUrl = "/cuticlaim/editStaff.aspx?id=" & e.Row.DataItem("STAFF_ID")
+            hyperlink1.NavigateUrl = "/cuticlaim/editStaff.aspx?id=" & e.Row.DataItem("idx")
         End If
     End Sub
 End Class

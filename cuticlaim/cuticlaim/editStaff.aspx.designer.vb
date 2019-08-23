@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class editStaff
     
     '''<summary>
+    '''idx control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents idx As Global.System.Web.UI.WebControls.HiddenField
+    
+    '''<summary>
     '''idxstaff control.
     '''</summary>
     '''<remarks>
@@ -30,6 +39,15 @@ Partial Public Class editStaff
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents idxstafforganisasi As Global.System.Web.UI.WebControls.HiddenField
+    
+    '''<summary>
+    '''lbl_error control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_error As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''name control.
@@ -111,33 +129,6 @@ Partial Public Class editStaff
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Position1 As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''dptmnt control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents dptmnt As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''rpt_to1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rpt_to1 As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''statuspkj control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents statuspkj As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''tel1 control.

@@ -8,6 +8,7 @@ Public Class mydb
 
     Public Sub New()
         constr = ConfigurationManager.ConnectionStrings("constr").ConnectionString
+        'constr = ConfigurationManager.ConnectionStrings("constr_local").ConnectionString
         Try
             conn = New MySqlConnection(constr)
             conn.Open()

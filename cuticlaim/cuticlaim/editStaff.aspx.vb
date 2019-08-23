@@ -1,96 +1,63 @@
 ﻿Public Class editStaff
     Inherits System.Web.UI.Page
 
+    Dim id As Integer
+    Dim mydb As New mydb
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not IsPostBack Then
+            id = CInt(Request("id"))
+            idx.Value = id
+            populate()
+        Else
+            Dim sql As String
+            Dim proc As Boolean = True
+            'state.Text
+            'postcode.Text
+            'city.Text
+            'ic.Text
+            'staffid.Text
+            'Position1.Text
+
+            If proc Then
+
+                sql = "UPDATE tbl_staff SET NAMA = '" & name.Text & "' , EMEL = '" & email.Text & "' , ALAMAT = '" & address.Text & "', " &
+                    "UPDATEBY = '" & Session("loginname") & "' " &
+                "WHERE idx =" & idx.Value
+                proc = mydb.Execute(sql)
+
+            End If
+
+            If proc Then
+                lbl_error.Text = "Berjaya"
+                populate()
+
+            End If
+        End If
+
 
     End Sub
 
     Public Sub populate()
-        Dim tmp_name As String = ""
-        Dim tmp_email As String = ""
-        Dim tmp_addr As String = ""
-        Dim tmp_state As String = ""
-        Dim tmp_postcode As String = ""
-        Dim tmp_city As String = ""
-        Dim tmp_noic As String = ""
-        Dim tmp_id As String = ""
-        Dim tmp_position As String = ""
-        Dim tmp_repto As String = ""
-        Dim tmp_status As String = ""
-        Dim tmp_pnumber As String = ""
-
-        Dim mydb As New mydb
         Dim dt As New DataTable()
 
+        Dim sql As String = "SELECT * FROM tbl_staff where idx = " & idx.Value
+        dt = mydb.Search(sql)
+
+        If dt.Rows.Count > 0 Then
+            name.Text = dt.Rows(0).Item("NAMA")
+            email.Text = dt.Rows(0).Item("EMEL")
+            address.Text = dt.Rows(0).Item("ALAMAT")
+            state.Text = dt.Rows(0).Item("NEGERI")
+            postcode.Text = dt.Rows(0).Item("POSKOD")
+            city.Text = dt.Rows(0).Item("BANDAR")
+            ic.Text = dt.Rows(0).Item("NOIC")
+            staffid.Text = dt.Rows(0).Item("STAFF_ID")
+            Position1.Text = dt.Rows(0).Item("ROLE_JAWATAN")
+            'rpt_to1.Text = dt.Rows(0).Item("NAMA")
+            'statuspkj.Text = dt.Rows(0).Item("NAMA")
+            tel1.Text = dt.Rows(0).Item("NAMA")
+        End If
 
     End Sub
-
-    '    Protected Sub btnSaveDetails_Click(sender As Object, e As EventArgs) Handles btnSaveDetails.Click
-    '        Try
-    '            Using db As New PetaPoco.Database(GetConnStr, GetConnProviderStr)
-    '                Dim tObj2 = db.FirstOrDefault(Of MWCDL.tbl_staff)(" WHERE idxpelanggan=@0  ORDER by createdate  ASC LIMIT 1 ", Session("idxPelanggan"))
-    '                If tObj2 IsNot Nothing Then
-    '                    Dim tObj As New MWCDL.tbl_staff
-    '                    With tObj
-    '                        .idx = tObj2.idx
-    '                        .idxpelanggan = Session("idxPelanggan")
-    '                        .STAFF_ID = name.Text.ToString
-    '                        .alamat1 = add1.Text.ToString
-    '                        .alamat2 = add2.Text.ToString
-    '                        .bandar = bandar.SelectedValue
-    '                        .negeri = state.SelectedValue
-    '                        .poskod = poskod.Text.ToString
-    '                        .negara = country.SelectedValue
-    '                        .tel_hp = phoneno.Text.ToString
-    '                        .createid = tObj2.createid
-    '                        .createdate = tObj2.createdate
-    '                    End With
-    '                    db.Update(tObj)
-
-
-    '                Else
-
-    '                    Dim tObj As New MWCDL.dbp_pelangganAddress
-    '                    With tObj
-    '                        .idxpelanggan = Session("idxPelanggan")
-    '                        .nama_penerima = name.Text.ToString
-    '                        .alamat1 = add1.Text.ToString
-    '                        .alamat2 = add2.Text.ToString
-    '                        .bandar = bandar.SelectedValue
-    '                        .negeri = state.SelectedValue
-    '                        .poskod = poskod.Text.ToString
-    '                        .negara = country.SelectedValue
-    '                        .tel_hp = phoneno.Text.ToString
-    '                        .createid = Session("idxPelanggan")
-    '                        .createdate = Date.Now
-    '                    End With
-    '                    db.Insert(tObj)
-
-    '                End If
-
-    '                Dim tObjPel As New MWCDL.dbp_pelanggan
-    '                With tObjPel
-    '                    .idx = Session("idxPelanggan")
-    '                    .emel = Session("emel")
-    '                    .nama_pelanggan = name.Text.ToString
-    '                    .nama_akhir = ""
-    '                    .syarikat = compname.Text.ToString
-    '                    .nokp = ""
-    '                    .dob = birthdate.Text
-    '                    .gender = jantina.SelectedValue
-    '                    .tel_rumah = 0
-    '                    .tel_hp = phoneno.Text.ToString
-    '                    .status = 1
-    '                End With
-    '                db.Update(tObjPel)
-    '                ltJSAlert.Text = JSAlertSuccess(RecordUpdated)
-
-    '            End Using
-
-    '        Catch ex As Exception
-    '            ex.ToString()
-    '        End Try
-
-    '    End Sub
-
 End Class
