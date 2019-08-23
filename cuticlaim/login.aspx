@@ -50,7 +50,7 @@
 					    <span class="login100-form-title p-b-34 p-t-27">
 						    Mindwave Consultancy
 					    </span>
-
+                        <asp:Label ID="lbl_error" runat="server"></asp:Label>
 					    <div class="wrap-input100 validate-input" data-validate = "Enter username">
 						    <input class="input100" type="text" name="inputUser" placeholder="Username">
 						    <%--<span class="focus-input100" data-placeholder="&#xf207;"></span>--%>

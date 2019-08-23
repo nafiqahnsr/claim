@@ -12,4 +12,13 @@ Option Explicit On
 
 
 Partial Public Class login
+    
+    '''<summary>
+    '''lbl_error control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_error As Global.System.Web.UI.WebControls.Label
 End Class

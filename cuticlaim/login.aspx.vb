@@ -9,21 +9,39 @@
 
     Protected Sub check_login()
 
-        Dim userlogin As String = Request("inputUser")
-        Dim userpass As String = Request("inputPassword")
+        Dim inputUser As String = Request("inputUser")
+        Dim inputPassword As String = Request("inputPassword")
 
-        If Not userlogin = "" Then
+        If Not inputUser = "" Then
             Dim mydb As New mydb
             Dim dt As New DataTable()
-            dt = mydb.Search("select NAMA, STAFF_ID, ROLE_JAWATAN, EMEL, TEL1 from tbl_staff;")
+            Dim sql As String = "SELECT * FROM pg_users WHERE UserID='" & inputUser & "'"
 
-            If userlogin = "abc" And userpass = "123" Then
-                Session("loginname") = userlogin
-                Response.Redirect("/cuticlaim/Dashboard.aspx")
+            dt = mydb.Search(sql)
+
+            If dt.Rows.Count > 0 Then
+                Dim pass As String = dt.Rows(0).Item("Password")
+
+                If inputPassword = pass Then
+                    Session("loginname") = inputUser
+                    Session("loginpass") = pass
+                    Session("userid") = dt.Rows(0).Item("idx")
+                    Session("fullname") = dt.Rows(0).Item("Fullname")
+
+                    Response.Redirect("/cuticlaim/Dashboard.aspx")
+
+                Else
+                    lbl_error.Visible = True
+                    lbl_error.Text = "Invalid Password!"
+                End If
+
             Else
-                'lbl_error.Visible = True
-                'lbl_error.Text = "Wrong ID or Password entered"
+
+                lbl_error.Visible = True
+                lbl_error.Text = "Wrong ID or Password entered"
+
             End If
+
 
         End If
         'If Session("loginname") Is Nothing Then
