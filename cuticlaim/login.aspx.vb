@@ -31,7 +31,7 @@ Public Class login
                     Session("userid") = dt.Rows(0).Item("idx")
                     Session("fullname") = dt.Rows(0).Item("Fullname")
 
-                    Response.Redirect("/cuticlaim/Dashboard.aspx")
+                    Response.Redirect("/cuticlaim/Dashboard.aspx?idx=" & Session("userid"))
 
                 Else
                     lbl_error.Visible = True

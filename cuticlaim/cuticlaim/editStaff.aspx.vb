@@ -12,16 +12,10 @@
         Else
             Dim sql As String
             Dim proc As Boolean = True
-            'state.Text
-            'postcode.Text
-            'city.Text
-            'ic.Text
-            'staffid.Text
-            'Position1.Text
 
             If proc Then
 
-                sql = "UPDATE tbl_staff SET NAMA = '" & name.Text & "' , EMEL = '" & email.Text & "' , ALAMAT = '" & address.Text & "', " &
+                sql = "UPDATE tbl_staff SET EMEL = '" & email.Text & "' , ALAMAT = '" & address.Text & "', NEGERI = '" & state.Text & "' , POSKOD = '" & postcode.Text & "' , BANDAR = '" & city.Text & "' , TEL1 = '" & tel1.Text & "' , " &
                     "UPDATEBY = '" & Session("loginname") & "' " &
                 "WHERE idx =" & idx.Value
                 proc = mydb.Execute(sql)
@@ -54,9 +48,7 @@
             ic.Text = dt.Rows(0).Item("NOIC")
             staffid.Text = dt.Rows(0).Item("STAFF_ID")
             Position1.Text = dt.Rows(0).Item("ROLE_JAWATAN")
-            'rpt_to1.Text = dt.Rows(0).Item("NAMA")
-            'statuspkj.Text = dt.Rows(0).Item("NAMA")
-            tel1.Text = dt.Rows(0).Item("NAMA")
+            tel1.Text = dt.Rows(0).Item("TEL1")
         End If
 
     End Sub

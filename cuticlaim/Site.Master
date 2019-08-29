@@ -5,8 +5,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Mindwave Consultancy</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/Dashboard.css" rel="stylesheet" />
+
+    <!--Basic Scripts-->
+        <script src="<%= ResolveUrl("~/") %>js/jquery.min.js"></script>
+        <script src="<%= ResolveUrl("~/") %>js/bootstrap.min.js"></script>
+        <%--<script src="<%= ResolveUrl("~/") %>assets/js/slimscroll/jquery.slimscroll.min.js"></script>--%>
+
+        <!--Jquery UI-->
+        <script src="<%= ResolveUrl("~/") %>js/jquery-ui.min.js" type="text/javascript"></script>
+        <link href="<%= ResolveUrl("~/") %>css/jquery-ui.css" rel="Stylesheet" type="text/css" />
+
+        <!--Jquery Select2-->
+        <%--<script src="<%= ResolveUrl("~/") %>assets/js/select2/select2.js"></script>--%>
+
+        <!--Bootstrap Date Picker-->
+        <script src="<%= ResolveUrl("~/") %>js/bootstrap-datepicker.js"></script>
+        <link href="/css/bootstrap.css" rel="stylesheet" />
+        <!--Bootstrap Time Picker-->
+        <%--<script src="<%= ResolveUrl("~/") %>assets/js/datetime/bootstrap-timepicker.js"></script>--%>
+
+    <%--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>--%>
+
+
+    <link href="/css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="/css/Dashboard.css" rel="stylesheet" />
+
    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
    
@@ -19,8 +42,10 @@
             <ul>
               <li><a class="active" href="/cuticlaim/Dashboard.aspx">Home</a></li>
               <li><a href="/claim/claim.aspx">Claim</a></li>
+              <li><a href="/User/addUser.aspx">Register</a></li>
               <li><a href="/offDay/offDay.aspx">Off Day</a></li>
               <li><a href="/login.aspx">Log Out</a></li>
+              <li><a href="/claim/claimList.aspx">Claim List</a></li>
             </ul>
             <br />
     <form id="form1" runat="server">

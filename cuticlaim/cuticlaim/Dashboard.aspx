@@ -7,7 +7,7 @@
     <div id="picture">
         <img src="/images/hi.png" style="width:400px;height:200px;"/>
     </div>
-
+    <br /> <br />
     <div class="container">
         <div class="row">
                 <div class="col-10">
@@ -31,7 +31,7 @@
 
         </div>
     </div>
-    <br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </asp:Content>
 
 <%--<asp:Content ID="Content1" ContentPlaceHolderID="HeadPageScriptContent" runat="server"></asp:Content>

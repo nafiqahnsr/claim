@@ -20,14 +20,12 @@
                     <asp:TextBox ID="email" runat="server" class="form-control" Style="width:300px"></asp:TextBox>                       
                                 
                     <label>Address</label>
-                    <asp:TextBox ID="address" TextMode="MultiLine" Rows="3" runat="server" class="form-control" Style="width:300px"></asp:TextBox>                       
-                                
+                    <asp:TextBox ID="address" TextMode="MultiLine" Rows="3" runat="server" class="form-control" Style="width:300px"></asp:TextBox>
+                    
                     <label>State</label>
-                    <div class="input-group">
-                        <asp:DropDownList ID="state" runat="server" Style="width:200px"></asp:DropDownList>
-                    </div>
-
-                    <label>Poscode</label>
+                    <asp:TextBox ID="state" runat="server" class="form-control" Style="width:300px"></asp:TextBox>
+                                
+                    <label>Postcode</label>
                     <asp:TextBox ID="postcode" runat="server" class="form-control" Style="width:200px"></asp:TextBox>                       
                                 
                     <label>City</label>

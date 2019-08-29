@@ -98,13 +98,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="claim\claim.aspx" />
+    <Content Include="claim\claimList.aspx" />
+    <Content Include="css\bootstrap-datepicker.css" />
+    <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Dashboard.css" />
+    <Content Include="css\jquery-ui.css" />
     <Content Include="css\main.css" />
     <Content Include="css\util.css" />
     <Content Include="cuticlaim\Dashboard.aspx" />
     <Content Include="cuticlaim\editStaff.aspx" />
     <Content Include="default.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="images\2.jpg" />
     <Content Include="images\bg-01.jpg" />
     <Content Include="images\bg1.jpg" />
@@ -114,8 +120,11 @@
     <Content Include="images\icons\favicon.ico" />
     <Content Include="images\logo.png" />
     <Content Include="images\logo2.png" />
+    <Content Include="js\bootstrap-datepicker.js" />
+    <Content Include="js\bootstrap-timepicker.js" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\main.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="login.aspx" />
     <Content Include="offDay\offDay.aspx" />
     <Content Include="StyleSheet1.css" />
@@ -128,6 +137,13 @@
     </Compile>
     <Compile Include="claim\claim.aspx.vb">
       <DependentUpon>claim.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="claim\claimList.aspx.designer.vb">
+      <DependentUpon>claimList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\claimList.aspx.vb">
+      <DependentUpon>claimList.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="class\common.vb" />
