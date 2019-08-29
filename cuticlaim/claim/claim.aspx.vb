@@ -5,8 +5,11 @@
     Dim userID As Integer
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        div_alert_msg.Visible = False
+
         If Not IsPostBack Then
             userID = Session("userid")
+            Bind_Category_Type("Please Select", "")
             populate()
         End If
 
@@ -19,20 +22,75 @@
         dt = mydb.Search(sql)
 
         If dt.Rows.Count > 0 Then
+            idx.Value = dt.Rows(0).Item("idx")
             name.Text = dt.Rows(0).Item("NAMA")
+            txt_nostaff.Text = dt.Rows(0).Item("STAFF_ID")
             tel1.Text = dt.Rows(0).Item("TEL1")
         End If
 
     End Sub
 
     Protected Sub btnSubmitDetails_click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSubmitDetails.Click
+        Dim proc As Boolean = True
+        Dim errMsg As String = ""
+        Dim sql As String
 
-        If (category.Text = -1) Then
-            label1.Text = "Pilih la category"
-        Else
-            label1.Text = ""
+        Try
+            Dim rdate As String = CDate(reqdate.Text).ToString("yyyy/MM/dd")
+            Dim categoryID As Integer = CInt(ddl_category.SelectedValue)
+
+            If proc Then
+
+                sql = "INSERT INTO tbl_claim_list (`STAFF_ID`, `request_date`, `claim_category`, `claim_value`, `status`) 
+                VALUES('" & txt_nostaff.Text & "', '" & rdate & "', " & categoryID & " , '" & valueRM.Text & "' , 'PENDING')"
+
+                If Not mydb.Execute(sql) Then
+                    Throw New Exception(mydb._errMsg)
+                    proc = False
+                End If
+
+            End If
+
+        Catch ex As Exception
+            Display_Error_Message(lbl_msg, div_alert_msg, ex.Message)
+        End Try
+    End Sub
+
+    Protected Sub Display_Error_Message(ByVal obj_lbl_msg As Label,
+                                        ByVal obj_div_alert_msg As HtmlControl,
+                                        ByVal err_Msg As String)
+        If Not obj_div_alert_msg Is Nothing Then
+            obj_div_alert_msg.Visible = True
         End If
-        'label1.Text = "Selamat Datang" + txt_nama.Text + " from " + txt_alamat.Text
+
+        If err_Msg.Length > 0 Then
+            obj_lbl_msg.Text += "ERROR ID : " & err_Msg & "<br />"
+        End If
+
+    End Sub
+
+    Protected Sub Bind_Category_Type(ByVal p_msg_select As String, ByVal p_selected_parameter_type As String)
+
+        Dim litem As ListItem
+        Dim dt As New DataTable()
+        Try
+
+            Dim sql As String = "SELECT idx, name FROM tbl_claim_category"
+            dt = mydb.Search(sql)
+
+            For Each dtrow As DataRow In dt.Rows
+                litem = New ListItem(dtrow.Item("name"), dtrow.Item("idx"))
+                ddl_category.Items.Add(litem)
+            Next
+
+            'For i = 0 To dt.Rows.Count - 1
+            '    litem = New ListItem(dt.Rows(i).Item("name"), dt.Rows(i).Item("idx"))
+            '    ddl_category.Items.Add(litem)
+            'Next
+        Catch ex As Exception
+            Display_Error_Message(lbl_msg, div_alert_msg, ex.Message)
+        End Try
+
     End Sub
 
 End Class

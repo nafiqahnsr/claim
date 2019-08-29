@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class claim
     
     '''<summary>
+    '''div_alert_msg control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents div_alert_msg As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''lbl_msg control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_msg As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''idx control.
     '''</summary>
     '''<remarks>
@@ -21,24 +39,6 @@ Partial Public Class claim
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents idx As Global.System.Web.UI.WebControls.HiddenField
-    
-    '''<summary>
-    '''idxstaff control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents idxstaff As Global.System.Web.UI.WebControls.HiddenField
-    
-    '''<summary>
-    '''idxstafforganisasi control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents idxstafforganisasi As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
     '''lbl_error control.
@@ -59,6 +59,24 @@ Partial Public Class claim
     Protected WithEvents name As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''txt_nostaff control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_nostaff As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''reqdate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents reqdate As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''tel1 control.
     '''</summary>
     '''<remarks>
@@ -68,13 +86,13 @@ Partial Public Class claim
     Protected WithEvents tel1 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''category control.
+    '''ddl_category control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents category As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddl_category As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''valueRM control.

@@ -12,28 +12,50 @@
         $(document).ready(function () {
             Ctrl();
         });
+
+        function div_alert_msg_close() {
+            $("#<%=div_alert_msg.ClientID%>").hide();
+        }
+
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+
+    <!-- Column - Content - Row - Alert Message - S -->
+    <div class="row" style="margin-top: 0px">
+        <div class="col-sm-12">
+            <div class="alert alert-danger col-margin-bottom" id="div_alert_msg" runat="server">
+                <a href="javascript:div_alert_msg_close();" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <asp:Label ID="lbl_msg" runat="server" Text=""></asp:Label>
+            </div>
+        </div>
+    </div>
+    <!-- Column - Content - Row - Alert Message -E -->
+
     <div class="container">
         <div class="row">
             <div class="col-10">
                 <div class="form-group">
                     <asp:HiddenField runat="server" ID="idx" />
-                    <asp:HiddenField runat="server" ID="idxstaff" />
-                    <asp:HiddenField runat="server" ID="idxstafforganisasi" />
+                    <%--<asp:HiddenField runat="server" ID="idxstaff" />
+                    <asp:HiddenField runat="server" ID="idxstafforganisasi" />--%>
 
                     <asp:Label ID="lbl_error" runat="server"></asp:Label>
 
                     <label>Name</label>
-                    <asp:TextBox ID="name" runat="server" class="form-control" Style="width:600px" ReadOnly="true"></asp:TextBox>                       
+                    <asp:TextBox ID="name" runat="server" class="form-control" Style="width:600px" ReadOnly="true"></asp:TextBox> 
+                    
+                    <label>Staff ID</label>
+                    <asp:TextBox ID="txt_nostaff" runat="server" class="form-control" Style="width:600px" ReadOnly="true"></asp:TextBox>                       
                                 
                     <span class="grid-action-icon glyphicon glyphicon-edit" data-toggle="tooltip" data-placement="top" data-original-title="down" />
                     <label>Date</label> 
                     <div class="controls">
                                 
-                       <div class="input-group date" style="width: 200px">
-                            <input type="text"  class="form-control date-picker"  />
+                        <div class="input-group date" style="width: 200px">
+                            <asp:TextBox ID="reqdate" runat="server" class="form-control date-picker" data-date-format="dd-mm-yyyy" data-mask="99-99-9999"
+                            data-bv-label="Claim Category"></asp:TextBox>
+                            <%--<input type="text" class="form-control date-picker"/>--%>
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-th"></span>
                             </div>
@@ -42,18 +64,18 @@
                         <asp:TextBox ID="tel1" runat="server" class="form-control" Style="width:200px" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"></asp:TextBox>
                     
                         <label>Claim Category</label>
-                        <asp:Dropdownlist ID="category" runat="server" Style="width:300px" CssClass="form-control wow fadeOut" placeholder="Claim Category">
-                            <asp:ListItem Text="Select Category" Value="-1" Selected="True"></asp:ListItem>
-                            <asp:ListItem Text="MILEAGE" Value="1"></asp:ListItem>
-                            <asp:ListItem Text="TAXI / GRAB / PUBLIC TRANSPORT" Value="2"></asp:ListItem>
-                            <asp:ListItem Text="PARKING" Value="3"></asp:ListItem>
-                            <asp:ListItem Text="FUEL (COMPANY CAR ONLY)" Value="4"></asp:ListItem>
-                            <asp:ListItem Text="ACCOMODATION LODGING" Value="5"></asp:ListItem>
-                            <asp:ListItem Text="ALLOWANCES" Value="6"></asp:ListItem>
-                            <asp:ListItem Text="ENTERTAINMENT" Value="7"></asp:ListItem>
-                            <asp:ListItem Text="MEDICAL" Value="8"></asp:ListItem>
-                            <asp:ListItem Text="DENTAL" Value="9"></asp:ListItem>
-                            <asp:ListItem Text="OTHERS / MISCELLANEOUS" Value="10"></asp:ListItem>
+                        <asp:Dropdownlist ID="ddl_category" runat="server" Style="width:300px" CssClass="form-control wow fadeOut" placeholder="Claim Category">
+                            <%--<asp:ListItem Text="Select Category" Value="-1" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="MILEAGE" Value="MILEAGE"></asp:ListItem>
+                            <asp:ListItem Text="TAXI / GRAB / PUBLIC TRANSPORT" Value="TAXI / GRAB / PUBLIC TRANSPORT"></asp:ListItem>
+                            <asp:ListItem Text="PARKING" Value="PARKING"></asp:ListItem>
+                            <asp:ListItem Text="FUEL (COMPANY CAR ONLY)" Value="FUEL (COMPANY CAR ONLY)"></asp:ListItem>
+                            <asp:ListItem Text="ACCOMODATION LODGING" Value="ACCOMODATION LODGING"></asp:ListItem>
+                            <asp:ListItem Text="ALLOWANCES" Value="ALLOWANCES"></asp:ListItem>
+                            <asp:ListItem Text="ENTERTAINMENT" Value="ENTERTAINMENT"></asp:ListItem>
+                            <asp:ListItem Text="MEDICAL" Value="MEDICAL"></asp:ListItem>
+                            <asp:ListItem Text="DENTAL" Value="DENTAL"></asp:ListItem>
+                            <asp:ListItem Text="OTHERS / MISCELLANEOUS" Value="OTHERS / MISCELLANEOUS"></asp:ListItem>--%>
                         </asp:Dropdownlist>
 
                         <label>RM</label>
@@ -62,6 +84,7 @@
                         <br />
                         <asp:Label ID ="label1" runat ="server"></asp:Label>
 
+                    </div>
                 </div>
             </div>
 
