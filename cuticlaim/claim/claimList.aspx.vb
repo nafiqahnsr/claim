@@ -14,13 +14,11 @@
 
         Try
             Dim sql As String = "SELECT a.idx as id, b.staff_id, a.request_date, a.claim_category, a.claim_value, b.staff_fullname as fullname FROM tbl_claim_list a JOIN tbl_staff b ON a.staff_id = b.idx"
-
             dt = mydb.Search(sql)
+            GridView1.DataSource = dt
+            GridView1.DataBind()
             If dt.Rows.Count = 0 Then
                 lbl_NoRecord.Text = "No records found"
-            Else
-                GridView1.DataSource = dt
-                GridView1.DataBind()
             End If
 
         Catch ex As Exception
