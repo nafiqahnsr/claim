@@ -14,24 +14,6 @@ Option Explicit On
 Partial Public Class addUser
     
     '''<summary>
-    '''idx control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents idx As Global.System.Web.UI.WebControls.HiddenField
-    
-    '''<summary>
-    '''idxstaff control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents idxstaff As Global.System.Web.UI.WebControls.HiddenField
-    
-    '''<summary>
     '''name control.
     '''</summary>
     '''<remarks>
@@ -39,15 +21,6 @@ Partial Public Class addUser
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents name As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''email control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents email As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''userID control.
@@ -68,6 +41,15 @@ Partial Public Class addUser
     Protected WithEvents staffID As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''email control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents email As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''pass control.
     '''</summary>
     '''<remarks>
@@ -77,13 +59,67 @@ Partial Public Class addUser
     Protected WithEvents pass As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''lbl_newPass control.
+    '''tel1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_newPass As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents tel1 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''noic control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents noic As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''ddl_position control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_position As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''address control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents address As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''postcode control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents postcode As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''city control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents city As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''state control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents state As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''btnSubmitDetails control.

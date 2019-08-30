@@ -23,9 +23,9 @@
 
         If dt.Rows.Count > 0 Then
             idx.Value = dt.Rows(0).Item("idx")
-            name.Text = dt.Rows(0).Item("NAMA")
-            txt_nostaff.Text = dt.Rows(0).Item("STAFF_ID")
-            tel1.Text = dt.Rows(0).Item("TEL1")
+            name.Text = dt.Rows(0).Item("staff_fullname")
+            txt_nostaff.Text = dt.Rows(0).Item("staff_id")
+            tel1.Text = dt.Rows(0).Item("staff_phone_num")
         End If
 
     End Sub
@@ -41,7 +41,7 @@
 
             If proc Then
 
-                sql = "INSERT INTO tbl_claim_list (`STAFF_ID`, `request_date`, `claim_category`, `claim_value`, `status`) 
+                sql = "INSERT INTO tbl_claim_list (`staff_id`, `request_date`, `claim_category`, `claim_value`, `status`) 
                 VALUES('" & txt_nostaff.Text & "', '" & rdate & "', " & categoryID & " , '" & valueRM.Text & "' , 'PENDING')"
 
                 If Not mydb.Execute(sql) Then

@@ -13,11 +13,10 @@
                 <div class="col-10">
                 <asp:GridView ID ="GridView1" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="10">
                     <Columns>
-                        <asp:BoundField DataField="NAMA" HeaderText="Name" ItemStyle-Width="100%"/>
-                        <asp:BoundField DataField="STAFF_ID" HeaderText="Staff ID"/>
-                        <asp:BoundField DataField="role_jawatan" HeaderText="Position"/>
-                        <asp:BoundField DataField="EMEL" HeaderText="Email"/>
-                        <asp:BoundField DataField="TEL1" HeaderText="Phone Number"/>
+                        <asp:BoundField DataField="staff_fullname" HeaderText="Name" ItemStyle-Width="100%"/>
+                        <asp:BoundField DataField="staff_id" HeaderText="Staff ID"/>
+                        <asp:BoundField DataField="staff_position" HeaderText="Position"/>
+                        <asp:BoundField DataField="staff_phone_num" HeaderText="Phone Number"/>
 
                         <asp:TemplateField HeaderText="Action" ItemStyle-Width="20px" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>

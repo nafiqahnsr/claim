@@ -10,7 +10,7 @@
     Private Sub BindGridView()
         Dim mydb As New mydb
         Dim dt As New DataTable()
-        dt = mydb.Search("select idx, NAMA, STAFF_ID, ROLE_JAWATAN, EMEL, TEL1 from tbl_staff;")
+        dt = mydb.Search("select idx, staff_fullname, staff_id, staff_position, staff_phone_num from tbl_staff;")
         GridView1.DataSource = dt
         GridView1.DataBind()
     End Sub

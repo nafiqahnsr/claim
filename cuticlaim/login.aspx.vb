@@ -22,14 +22,14 @@ Public Class login
             dt = mydb.Search(sql)
 
             If dt.Rows.Count > 0 Then
-                'Dim pass As String = dt.Rows(0).Item("Password")
+                'Dim pass As String = dt.Rows(0).Item("password")
                 'If Hash.Verify(HashType.MD5, inputPassword, String.Empty, True, pass) Then
-                If common.VerifyUser(inputPassword, dt.Rows(0).Item("Password")) Then
+                If common.VerifyUser(inputPassword, dt.Rows(0).Item("password")) Then
 
                     Session("loginname") = inputUser
-                    Session("loginpass") = dt.Rows(0).Item("Password")
+                    Session("loginpass") = dt.Rows(0).Item("password")
                     Session("userid") = dt.Rows(0).Item("idx")
-                    Session("fullname") = dt.Rows(0).Item("Fullname")
+                    Session("fullname") = dt.Rows(0).Item("staff_fullname")
 
                     Response.Redirect("/cuticlaim/Dashboard.aspx?idx=" & Session("userid"))
 

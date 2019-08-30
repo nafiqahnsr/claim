@@ -15,8 +15,8 @@
 
             If proc Then
 
-                sql = "UPDATE tbl_staff SET EMEL = '" & email.Text & "' , ALAMAT = '" & address.Text & "', NEGERI = '" & state.Text & "' , POSKOD = '" & postcode.Text & "' , BANDAR = '" & city.Text & "' , TEL1 = '" & tel1.Text & "' , " &
-                    "UPDATEBY = '" & Session("loginname") & "' " &
+                sql = "UPDATE tbl_staff SET address = '" & address.Text & "', state = '" & state.Text & "' , postcode = '" & postcode.Text & "' , city = '" & city.Text & "' , staff_phone_num = '" & tel1.Text & "' , " &
+                    "updatedby = '" & Session("loginname") & "' " &
                 "WHERE idx =" & idx.Value
                 proc = mydb.Execute(sql)
 
@@ -39,16 +39,15 @@
         dt = mydb.Search(sql)
 
         If dt.Rows.Count > 0 Then
-            name.Text = dt.Rows(0).Item("NAMA")
-            email.Text = dt.Rows(0).Item("EMEL")
-            address.Text = dt.Rows(0).Item("ALAMAT")
-            state.Text = dt.Rows(0).Item("NEGERI")
-            postcode.Text = dt.Rows(0).Item("POSKOD")
-            city.Text = dt.Rows(0).Item("BANDAR")
-            ic.Text = dt.Rows(0).Item("NOIC")
-            staffid.Text = dt.Rows(0).Item("STAFF_ID")
-            Position1.Text = dt.Rows(0).Item("ROLE_JAWATAN")
-            tel1.Text = dt.Rows(0).Item("TEL1")
+            name.Text = dt.Rows(0).Item("staff_fullname")
+            address.Text = dt.Rows(0).Item("address")
+            state.Text = dt.Rows(0).Item("state")
+            postcode.Text = dt.Rows(0).Item("postcode")
+            city.Text = dt.Rows(0).Item("city")
+            ic.Text = dt.Rows(0).Item("staff_noic")
+            staffid.Text = dt.Rows(0).Item("staff_id")
+            Position1.Text = dt.Rows(0).Item("staff_position")
+            tel1.Text = dt.Rows(0).Item("staff_phone_num")
         End If
 
     End Sub
