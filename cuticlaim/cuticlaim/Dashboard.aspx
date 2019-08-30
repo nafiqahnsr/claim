@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
                 <div class="col-10">
-                <asp:GridView ID ="GridView1" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="10">
+                <asp:GridView ID ="GridView1" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="10" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <Columns>
                         <asp:BoundField DataField="staff_fullname" HeaderText="Name" ItemStyle-Width="100%"/>
                         <asp:BoundField DataField="staff_id" HeaderText="Staff ID"/>
