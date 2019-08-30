@@ -8,7 +8,7 @@
 
         function confirm_delete(p_id) {
             try {
-                $("#<%=hdn_idx.ClientID%>").val(p_id);
+                $("#<%=hdn_id.ClientID%>").val(p_id);
                 console.log(p_id);
                 <%= ClientScript.GetPostBackEventReference(btn_del, "", True)%>
             } catch (err) {
@@ -32,8 +32,8 @@
     <!-- Column - Content - Row - Alert Message -E -->
 
     <div style="display:none">
-        <asp:TextBox ID="hdn_idx" runat="server"></asp:TextBox>
-        <asp:Button ID="btn_del" runat="server" />
+        <asp:TextBox ID="hdn_id" runat="server"></asp:TextBox>
+        <asp:Button ID="btn_del" runat="server"/>
     </div>
 
     <div class="container">
@@ -41,15 +41,15 @@
                 <div class="col-10">
                     <asp:GridView ID ="GridView1" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="10" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <Columns>
-                            <asp:BoundField DataField="staff_fullname" HeaderText="Name"/>
+                            <asp:BoundField DataField="fullname" HeaderText="Name"/>
                             <asp:BoundField DataField="staff_id" HeaderText="Staff ID"/> 
-                            <asp:BoundField DataField="staff_position" HeaderText="Date" ItemStyle-HorizontalAlign="Center"/>
-                            <asp:BoundField DataField="staff_noic" HeaderText="RM"/>
+                            <asp:BoundField DataField="request_date" HeaderText="Date" ItemStyle-HorizontalAlign="Center"/>
+                            <asp:BoundField DataField="claim_value" HeaderText="RM"/>
 
                             <asp:TemplateField HeaderText="Action" ItemStyle-Width="20px" ItemStyle-HorizontalAlign="Center">
                                 <ItemTemplate>
                                     <asp:HyperLink ID="HyperLink_edit" runat="server"><span class="grid-action-icon glyphicon glyphicon-edit"/> </asp:HyperLink>
-                                    <a href="javascript:confirm_delete('<%#DataBinder.Eval(Container.DataItem, "idx") %>');"><span class="grid-action-icon glyphicon glyphicon-trash"/></a>
+                                    <a href="javascript:confirm_delete('<%#DataBinder.Eval(Container.DataItem, "id") %>');"><span class="grid-action-icon glyphicon glyphicon-trash"/></a>
 
                                 </ItemTemplate> 
                             </asp:TemplateField>
@@ -57,7 +57,12 @@
                         </Columns>
                     </asp:GridView>
                 </div>
+        </div>
 
+        <div class="row">
+            <div class ="col-sm-12">
+                <asp:Label ID="lbl_NoRecord" runat="server" ForeColor="red"></asp:Label>
+            </div>
         </div>
     </div>
 

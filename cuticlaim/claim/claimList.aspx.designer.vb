@@ -32,13 +32,13 @@ Partial Public Class claimList
     Protected WithEvents lbl_msg As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''hdn_idx control.
+    '''hdn_id control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hdn_idx As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents hdn_id As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''btn_del control.
@@ -57,4 +57,13 @@ Partial Public Class claimList
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''lbl_NoRecord control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_NoRecord As Global.System.Web.UI.WebControls.Label
 End Class

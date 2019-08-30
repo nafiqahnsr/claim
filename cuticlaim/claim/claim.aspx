@@ -32,14 +32,15 @@
     </div>
     <!-- Column - Content - Row - Alert Message -E -->
 
+    <div style="display:none">
+        <asp:TextBox ID="hdn_id" runat="server"></asp:TextBox>
+        <asp:Button ID="btn_del" runat="server"/>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-10">
                 <div class="form-group">
-                    <asp:HiddenField runat="server" ID="idx" />
-                    <%--<asp:HiddenField runat="server" ID="idxstaff" />
-                    <asp:HiddenField runat="server" ID="idxstafforganisasi" />--%>
-
                     <asp:Label ID="lbl_error" runat="server"></asp:Label>
 
                     <label>Name</label>

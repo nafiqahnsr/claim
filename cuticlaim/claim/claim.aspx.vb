@@ -22,7 +22,7 @@
         dt = mydb.Search(sql)
 
         If dt.Rows.Count > 0 Then
-            idx.Value = dt.Rows(0).Item("idx")
+            hdn_id.Text = dt.Rows(0).Item("idx")
             name.Text = dt.Rows(0).Item("staff_fullname")
             txt_nostaff.Text = dt.Rows(0).Item("staff_id")
             tel1.Text = dt.Rows(0).Item("staff_phone_num")
@@ -42,7 +42,7 @@
             If proc Then
 
                 sql = "INSERT INTO tbl_claim_list (`staff_id`, `request_date`, `claim_category`, `claim_value`, `status`) 
-                VALUES('" & txt_nostaff.Text & "', '" & rdate & "', " & categoryID & " , '" & valueRM.Text & "' , 'PENDING')"
+                VALUES('" & hdn_id.Text & "', '" & rdate & "', " & categoryID & " , '" & valueRM.Text & "' , 'PENDING')"
 
                 If Not mydb.Execute(sql) Then
                     Throw New Exception(mydb._errMsg)

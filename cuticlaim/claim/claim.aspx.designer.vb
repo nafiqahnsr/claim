@@ -32,13 +32,22 @@ Partial Public Class claim
     Protected WithEvents lbl_msg As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''idx control.
+    '''hdn_id control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents idx As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents hdn_id As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''btn_del control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_del As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''lbl_error control.
