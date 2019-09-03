@@ -11,25 +11,34 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class addUser
+Partial Public Class editClaim
     
     '''<summary>
-    '''div_alert_msg control.
+    '''hdn_id control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents div_alert_msg As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents hdn_id As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''lbl_msg control.
+    '''btn_del control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_msg As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btn_del As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''lbl_error control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_error As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''name control.
@@ -41,40 +50,22 @@ Partial Public Class addUser
     Protected WithEvents name As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''userID control.
+    '''txt_nostaff control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents userID As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_nostaff As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''staffID control.
+    '''reqdate control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents staffID As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''email control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents email As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''pass control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pass As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents reqdate As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''tel1 control.
@@ -86,58 +77,31 @@ Partial Public Class addUser
     Protected WithEvents tel1 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''noic control.
+    '''ddl_category control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents noic As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddl_category As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''ddl_position control.
+    '''valueRM control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_position As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents valueRM As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''address control.
+    '''label1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents address As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''postcode control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents postcode As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''city control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents city As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''state control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents state As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents label1 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''btnSubmitDetails control.

@@ -99,6 +99,7 @@
   <ItemGroup>
     <Content Include="claim\claim.aspx" />
     <Content Include="claim\claimList.aspx" />
+    <Content Include="claim\editClaim.aspx" />
     <Content Include="css\bootstrap-datepicker.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -144,6 +145,13 @@
     </Compile>
     <Compile Include="claim\claimList.aspx.vb">
       <DependentUpon>claimList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="claim\editClaim.aspx.designer.vb">
+      <DependentUpon>editClaim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\editClaim.aspx.vb">
+      <DependentUpon>editClaim.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="class\common.vb" />

@@ -1,8 +1,25 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="addUser.aspx.vb" Inherits="cuticlaim.addUser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+ 
+        function div_alert_msg_close() {
+            $("#<%=div_alert_msg.ClientID%>").hide();
+        }
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
     
+        <!-- Column - Content - Row - Alert Message - S -->
+    <div class="row" style="margin-top: 0px">
+        <div class="col-sm-12">
+            <div class="alert alert-danger col-margin-bottom" id="div_alert_msg" runat="server">
+                <a href="javascript:div_alert_msg_close();" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <asp:Label ID="lbl_msg" runat="server" Text=""></asp:Label>
+            </div>
+        </div>
+    </div>
+    <!-- Column - Content - Row - Alert Message -E -->
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-3">

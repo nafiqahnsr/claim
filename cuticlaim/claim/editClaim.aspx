@@ -1,35 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="claim.aspx.vb" Inherits="cuticlaim.claim" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="editClaim.aspx.vb" Inherits="cuticlaim.editClaim" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script>
-        function Ctrl() {
-
-            //--Bootstrap Date Picker--
-            $('.date-picker').datepicker();
-
-        }
-
-        $(document).ready(function () {
-            Ctrl();
-        });
-
-        function div_alert_msg_close() {
-            $("#<%=div_alert_msg.ClientID%>").hide();
-        }
-
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
-
-    <!-- Column - Content - Row - Alert Message - S -->
-    <div class="row" style="margin-top: 0px">
-        <div class="col-sm-12">
-            <div class="alert alert-danger col-margin-bottom" id="div_alert_msg" runat="server">
-                <a href="javascript:div_alert_msg_close();" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <asp:Label ID="lbl_msg" runat="server" Text=""></asp:Label>
-            </div>
-        </div>
-    </div>
-    <!-- Column - Content - Row - Alert Message -E -->
 
     <div style="display:none">
         <asp:TextBox ID="hdn_id" runat="server"></asp:TextBox>
@@ -40,6 +12,7 @@
         <div class="row">
             <div class="col-10">
                 <div class="form-group">
+                    <%--<asp:HiddenField runat="server" ID="idx" />--%>
                     <asp:Label ID="lbl_error" runat="server"></asp:Label>
 
                     <label>Name</label>
@@ -54,7 +27,7 @@
                                 
                         <div class="input-group date" style="width: 200px">
                             <asp:TextBox ID="reqdate" runat="server" class="form-control date-picker" data-date-format="dd-mm-yyyy" data-mask="99-99-9999"
-                            data-bv-label="Claim Category"></asp:TextBox>
+                            data-bv-label="Claim Category" ReadOnly="true"></asp:TextBox>
                             <%--<input type="text" class="form-control date-picker"/>--%>
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-th"></span>
@@ -65,19 +38,8 @@
                     
                         <label>Claim Category</label>
                         <asp:Dropdownlist ID="ddl_category" runat="server" Style="width:300px" CssClass="form-control wow fadeOut" placeholder="Claim Category">
-                            <%--<asp:ListItem Text="Select Category" Value="-1" Selected="True"></asp:ListItem>
-                            <asp:ListItem Text="MILEAGE" Value="MILEAGE"></asp:ListItem>
-                            <asp:ListItem Text="TAXI / GRAB / PUBLIC TRANSPORT" Value="TAXI / GRAB / PUBLIC TRANSPORT"></asp:ListItem>
-                            <asp:ListItem Text="PARKING" Value="PARKING"></asp:ListItem>
-                            <asp:ListItem Text="FUEL (COMPANY CAR ONLY)" Value="FUEL (COMPANY CAR ONLY)"></asp:ListItem>
-                            <asp:ListItem Text="ACCOMODATION LODGING" Value="ACCOMODATION LODGING"></asp:ListItem>
-                            <asp:ListItem Text="ALLOWANCES" Value="ALLOWANCES"></asp:ListItem>
-                            <asp:ListItem Text="ENTERTAINMENT" Value="ENTERTAINMENT"></asp:ListItem>
-                            <asp:ListItem Text="MEDICAL" Value="MEDICAL"></asp:ListItem>
-                            <asp:ListItem Text="DENTAL" Value="DENTAL"></asp:ListItem>
-                            <asp:ListItem Text="OTHERS / MISCELLANEOUS" Value="OTHERS / MISCELLANEOUS"></asp:ListItem>--%>
                         </asp:Dropdownlist>
-                         
+
                         <label>RM</label>
                         <asp:TextBox ID="valueRM" runat="server" class="form-control" Style="width:300px"></asp:TextBox>
 
@@ -94,4 +56,5 @@
         </div>
         </div>
     <br /><br />
+
 </asp:Content>

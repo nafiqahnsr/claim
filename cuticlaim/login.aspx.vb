@@ -17,7 +17,9 @@ Public Class login
             Dim mydb As New mydb
             Dim common As New common
             Dim dt As New DataTable()
-            Dim sql As String = "SELECT * FROM pg_users WHERE UserID='" & inputUser & "'"
+            Dim sql As String
+            'sql = "SELECT * FROM pg_users WHERE username ='" & inputUser & "'"
+            sql = "SELECT * FROM pg_users a JOIN tbl_staff b ON a.staff_id = b.staff_id WHERE a.username ='" & inputUser & "'"
 
             dt = mydb.Search(sql)
 
@@ -26,10 +28,12 @@ Public Class login
                 'If Hash.Verify(HashType.MD5, inputPassword, String.Empty, True, pass) Then
                 If common.VerifyUser(inputPassword, dt.Rows(0).Item("password")) Then
 
-                    Session("loginname") = inputUser
+                    Session("loginname") = dt.Rows(0).Item("username")
                     Session("loginpass") = dt.Rows(0).Item("password")
                     Session("userid") = dt.Rows(0).Item("idx")
+                    Session("position") = dt.Rows(0).Item("staff_position")
                     Session("fullname") = dt.Rows(0).Item("staff_fullname")
+                    'Session("position") = dt.Rows()
 
                     Response.Redirect("/cuticlaim/Dashboard.aspx?idx=" & Session("userid"))
 

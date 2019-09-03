@@ -41,19 +41,17 @@
                 <div class="col-10">
                     <asp:GridView ID ="GridView1" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="10" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <Columns>
-                            <asp:BoundField DataField="fullname" HeaderText="Name"/>
-                            <asp:BoundField DataField="staff_id" HeaderText="Staff ID"/> 
-                            <asp:BoundField DataField="request_date" HeaderText="Date" ItemStyle-HorizontalAlign="Center"/>
-                            <asp:BoundField DataField="claim_value" HeaderText="RM"/>
-
+                            <asp:BoundField DataField="fullname" HeaderText="Name" ItemStyle-Width="300px"/>
+                            <asp:BoundField DataField="staff_id" HeaderText="Staff ID" ItemStyle-Width="80px" ItemStyle-HorizontalAlign="Center"/> 
+                            <asp:BoundField DataField="request_date" HeaderText="Date" ItemStyle-Width="250" ItemStyle-HorizontalAlign="Center"/>
+                            <asp:BoundField DataField="claim_value" HeaderText="RM" ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center"/>
+                            <asp:BoundField DataField="status" HeaderText="Status" ItemStyle-Width="80px" ItemStyle-HorizontalAlign="Center"/>
                             <asp:TemplateField HeaderText="Action" ItemStyle-Width="20px" ItemStyle-HorizontalAlign="Center">
                                 <ItemTemplate>
                                     <asp:HyperLink ID="HyperLink_edit" runat="server"><span class="grid-action-icon glyphicon glyphicon-edit"/> </asp:HyperLink>
-                                    <a href="javascript:confirm_delete('<%#DataBinder.Eval(Container.DataItem, "id") %>');"><span class="grid-action-icon glyphicon glyphicon-trash"/></a>
-
+                                    <a href="javascript:confirm_delete('<%#DataBinder.Eval(Container.DataItem, "idx") %>');"><span class="grid-action-icon glyphicon glyphicon-trash"/></a>
                                 </ItemTemplate> 
                             </asp:TemplateField>
-                        
                         </Columns>
                     </asp:GridView>
                 </div>

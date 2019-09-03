@@ -4,6 +4,7 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         div_alert_msg.Visible = False
         If Not Me.IsPostBack Then
+            'hdn_id.Text = Session("userid")
             populate()
         End If
     End Sub
@@ -13,7 +14,7 @@
         Dim dt As New DataTable()
 
         Try
-            Dim sql As String = "SELECT a.idx as id, b.staff_id, a.request_date, a.claim_category, a.claim_value, b.staff_fullname as fullname FROM tbl_claim_list a JOIN tbl_staff b ON a.staff_id = b.idx"
+            Dim sql As String = "SELECT a.idx as id, a.staff_id as idx, b.staff_id, a.request_date, a.claim_category, a.claim_value, b.staff_fullname as fullname, a.status FROM tbl_claim_list a JOIN tbl_staff b ON a.staff_id = b.idx"
             dt = mydb.Search(sql)
             GridView1.DataSource = dt
             GridView1.DataBind()
@@ -36,7 +37,7 @@
             Dim hyperlink_edit As HyperLink = CType(e.Row.FindControl("HyperLink_edit"), HyperLink)
 
             'hyperlink_edit.Text = "Edit"
-            hyperlink_edit.NavigateUrl = "/cuticlaim/editStaff.aspx?id=" & e.Row.DataItem("id")
+            hyperlink_edit.NavigateUrl = "/claim/editClaim.aspx?id=" & e.Row.DataItem("idx")
 
         End If
     End Sub
@@ -49,7 +50,7 @@
         Try
             If proc Then
 
-                sql = "DELETE FROM tbl_claim_list WHERE idx =" & hdn_id.Text
+                sql = "DELETE FROM tbl_claim_list WHERE staff_id =" & hdn_id.Text
 
                 If Not mydb.Execute(sql) Then
                     Throw New Exception(mydb._errMsg)
