@@ -45,6 +45,7 @@
               <li><a href="/offDay/offDay.aspx">Off Day</a></li>
               <li><a href="/login.aspx">Log Out</a></li>
               <li><a href="/claim/claimList.aspx">Claim List</a></li>
+              <li><a href="/User/account.aspx">Account</a></li>
             </ul>
             <br />
     <form id="form1" runat="server">
