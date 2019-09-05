@@ -16,9 +16,21 @@
             $("#<%=div_alert_msg.ClientID%>").hide();
         }
 
+        function ShowPopup(title, body) {
+            $("#MyPopup .modal-title").html(title);
+            $("#MyPopup .modal-body").html(body);
+            $("#MyPopup").modal("show");
+        }
     </script>
+
+  
+  
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+
+
+
 
     <!-- Column - Content - Row - Alert Message - S -->
     <div class="row" style="margin-top: 0px">
@@ -48,7 +60,6 @@
                     <label>Staff ID</label>
                     <asp:TextBox ID="txt_nostaff" runat="server" class="form-control" Style="width:600px" ReadOnly="true"></asp:TextBox>                       
                                 
-                    <span class="grid-action-icon glyphicon glyphicon-edit" data-toggle="tooltip" data-placement="top" data-original-title="down" />
                     <label>Date</label> 
                     <div class="controls">
                                 
@@ -81,20 +92,48 @@
                         <label>RM</label>
                         <asp:TextBox ID="valueRM" runat="server" class="form-control" Style="width:300px"></asp:TextBox>
 
-                        <asp:FileUpload ID="FileUpload1" runat="server" />
-                        <asp:LinkButton ID="btn_upload" Text="Upload" runat="server" OnClick="UploadFile" ></asp:LinkButton>
-
-                        <br />
-                        <asp:Label ID ="label1" runat ="server"></asp:Label>
-
                     </div>
                 </div>
             </div>
 
+            
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <asp:FileUpload ID="FileUpload1" runat="server" /> 
+                <asp:LinkButton ID="btn_upload" runat="server" class="btn btn-info" OnClick="UploadFile" Text="<i class='fa fa-save'></i>Upload"/>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12 text-center">
                 <asp:LinkButton runat="server" ID="btnSubmitDetails" class="btn btn-primary" Text="<i class='fa fa-save'></i>Submit"/>
             </div>
         </div>
+    </div>
+
+    <!-- Trigger the modal with a button -->
+    <%--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#MyPopup">Open Modal</button>--%>
+
+<!-- Modal -->
+<div id="MyPopup" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;</button>
+                <h4 class="modal-title">
+                </h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    Close</button>
+            </div>
         </div>
-    <br /><br />
+    </div>
+</div>
+<!-- Modal -->
+
 </asp:Content>

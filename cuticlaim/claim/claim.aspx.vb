@@ -96,6 +96,13 @@ Public Class claim
     Protected Sub UploadFile(sender As Object, e As EventArgs)
         Dim folderPath As String = Server.MapPath("~/Files/")
 
+        If FileUpload1.FileName.Count = 0 Then
+            ClientScript.RegisterStartupScript(Me.GetType(), "Popup", "ShowPopup('" & Title & "', 'Please select upload file!');", True)
+            'System.Web.UI.ScriptManager.RegisterClientScriptBlock(Page, GetType(Page), "Script", "javascript:alert('Please select upload file!');", True)
+            'Display_Error_Message(lbl_msg, div_alert_msg, "Please select upload file!")
+            Exit Sub
+        End If
+
         'Check whether Directory (Folder) exists.
         If Not Directory.Exists(folderPath) Then
             'If Directory (Folder) does not exists. Create it.

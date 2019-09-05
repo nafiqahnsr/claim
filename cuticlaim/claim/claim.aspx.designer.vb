@@ -131,15 +131,6 @@ Partial Public Class claim
     Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.LinkButton
     
     '''<summary>
-    '''label1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents label1 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
     '''btnSubmitDetails control.
     '''</summary>
     '''<remarks>
