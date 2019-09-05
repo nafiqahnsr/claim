@@ -81,6 +81,9 @@
                         <label>RM</label>
                         <asp:TextBox ID="valueRM" runat="server" class="form-control" Style="width:300px"></asp:TextBox>
 
+                        <asp:FileUpload ID="FileUpload1" runat="server" />
+                        <asp:LinkButton ID="btn_upload" Text="Upload" runat="server" OnClick="UploadFile" ></asp:LinkButton>
+
                         <br />
                         <asp:Label ID ="label1" runat ="server"></asp:Label>
 

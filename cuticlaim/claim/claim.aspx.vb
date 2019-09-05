@@ -1,4 +1,5 @@
-﻿Public Class claim
+﻿Imports System.IO
+Public Class claim
     Inherits System.Web.UI.Page
 
     Dim mydb As New mydb
@@ -12,7 +13,6 @@
             Bind_Category_Type("Please Select", "")
             populate()
         End If
-
     End Sub
 
     Public Sub populate()
@@ -91,6 +91,22 @@
             Display_Error_Message(lbl_msg, div_alert_msg, ex.Message)
         End Try
 
+    End Sub
+
+    Protected Sub UploadFile(sender As Object, e As EventArgs)
+        Dim folderPath As String = Server.MapPath("~/Files/")
+
+        'Check whether Directory (Folder) exists.
+        If Not Directory.Exists(folderPath) Then
+            'If Directory (Folder) does not exists. Create it.
+            Directory.CreateDirectory(folderPath)
+        End If
+
+        'Save the File to the Directory (Folder).
+        FileUpload1.SaveAs(folderPath & Path.GetFileName(FileUpload1.FileName))
+
+        'Display the success message.
+        Display_Error_Message(lbl_msg, div_alert_msg, Path.GetFileName(FileUpload1.FileName) + " has been uploaded.")
     End Sub
 
 End Class
