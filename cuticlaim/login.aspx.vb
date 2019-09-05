@@ -31,6 +31,7 @@ Public Class login
                     Session("loginname") = dt.Rows(0).Item("username")
                     Session("loginpass") = dt.Rows(0).Item("password")
                     Session("userid") = dt.Rows(0).Item("idx")
+                    Session("staff_id") = dt.Rows(0).Item("staff_id")
                     Session("position") = dt.Rows(0).Item("staff_position")
                     Session("fullname") = dt.Rows(0).Item("staff_fullname")
                     'Session("position") = dt.Rows()

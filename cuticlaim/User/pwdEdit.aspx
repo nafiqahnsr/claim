@@ -21,4 +21,5 @@
     <div class="col-md-12 text-center">
         <asp:LinkButton runat="server" ID="btnSubmitDetails" class="btn btn-primary" Text="<i class='fa fa-save'></i>Submit"/>
     </div>
+    <br /><br />
 </asp:Content>

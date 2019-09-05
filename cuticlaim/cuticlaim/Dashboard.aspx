@@ -15,12 +15,15 @@
                     <Columns>
                         <asp:BoundField DataField="staff_fullname" HeaderText="Name" ItemStyle-Width="700px"/>
                         <asp:BoundField DataField="staff_id" HeaderText="Staff ID" ItemStyle-Width="80px" ItemStyle-HorizontalAlign="Center"/>
-                        <asp:BoundField DataField="staff_position" HeaderText="Position" ItemStyle-Width="80px" ItemStyle-HorizontalAlign="Center"/>
+                        <asp:TemplateField HeaderText="Position" ItemStyle-Width="200px" ItemStyle-HorizontalAlign="Center">
+                            <ItemTemplate>
+                                <asp:label ID ="lbl_position" runat="server"></asp:label>
+                            </ItemTemplate> 
+                        </asp:TemplateField>
                         <asp:BoundField DataField="staff_phone_num" HeaderText="Phone Number" ItemStyle-Width="120px" ItemStyle-HorizontalAlign="Center"/>
-
                         <asp:TemplateField HeaderText="Action" ItemStyle-Width="20px" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
-                            <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink1" runat="server" class="grid-action-icon glyphicon glyphicon-edit"/>
                         </ItemTemplate> 
                             </asp:TemplateField>
 

@@ -1,4 +1,4 @@
-﻿Public Class claimList
+﻿Public Class claimListManager
     Inherits System.Web.UI.Page
     Dim mydb As New mydb
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -10,12 +10,11 @@
     End Sub
 
     Private Sub populate()
+        Dim mydb As New mydb
         Dim dt As New DataTable()
 
         Try
-            Dim sql As String = "SELECT a.idx as id, a.request_date, a.claim_category, a.claim_value, a.status " &
-            "FROM tbl_claim_list a JOIN tbl_staff b ON a.staff_id = b.idx WHERE b.staff_id = '" & Session("staff_id") & "'" &
-            "ORDER BY a.request_date"
+            Dim sql As String = "SELECT a.idx as id, a.staff_id as idx, b.staff_id, a.request_date, a.claim_category, a.claim_value, b.staff_fullname as fullname, a.status FROM tbl_claim_list a JOIN tbl_staff b ON a.staff_id = b.idx"
             dt = mydb.Search(sql)
             GridView1.DataSource = dt
             GridView1.DataBind()
@@ -35,26 +34,13 @@
 
     Private Sub GridView1_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GridView1.RowDataBound
         If e.Row.RowIndex <> -1 Then
-            Dim lbl_category As Label = CType(e.Row.FindControl("lbl_category"), Label)
             Dim hyperlink_edit As HyperLink = CType(e.Row.FindControl("HyperLink_edit"), HyperLink)
 
-            lbl_category.Text = get_Category(e.Row.DataItem("claim_category"))
-
-            hyperlink_edit.NavigateUrl = "/claim/editClaim.aspx?id=" & e.Row.DataItem("id")
+            'hyperlink_edit.Text = "Edit"
+            hyperlink_edit.NavigateUrl = "/claim/pendingClaim.aspx?id=" & e.Row.DataItem("idx")
 
         End If
     End Sub
-
-    Private Function get_Category(ByVal id As Integer) As String
-        Dim category As String = ""
-        Dim dt As New DataTable()
-
-        Dim sql As String = "SELECT name FROM tbl_claim_category WHERE idx=" & id
-        dt = mydb.Search(sql)
-        category = dt.Rows(0).Item("name").ToString
-
-        Return category
-    End Function
 
     Protected Sub btn_del_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_del.Click
         Dim proc As Boolean = True
@@ -64,7 +50,7 @@
         Try
             If proc Then
 
-                sql = "DELETE FROM tbl_claim_list WHERE idx =" & hdn_id.Text
+                sql = "DELETE FROM tbl_claim_list WHERE staff_id =" & hdn_id.Text
 
                 If Not mydb.Execute(sql) Then
                     Throw New Exception(mydb._errMsg)

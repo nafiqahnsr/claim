@@ -44,10 +44,20 @@
             city.Text = dt.Rows(0).Item("city")
             ic.Text = dt.Rows(0).Item("staff_noic")
             staffid.Text = dt.Rows(0).Item("staff_id")
-            Position1.Text = dt.Rows(0).Item("staff_position")
+            Position1.Text = get_Position(dt.Rows(0).Item("staff_position"))
             tel1.Text = dt.Rows(0).Item("staff_phone_num")
         End If
 
     End Sub
+    Private Function get_Position(ByVal id As Integer) As String
+        Dim position As String = ""
+        Dim dt As New DataTable()
+
+        Dim sql As String = "SELECT position_name FROM tbl_position WHERE idx=" & id
+        dt = mydb.Search(sql)
+        position = dt.Rows(0).Item("position_name").ToString
+
+        Return position
+    End Function
 
 End Class

@@ -23,6 +23,7 @@
                         If proc Then
                             sql = "UPDATE pg_users SET password = '" & temp_pass & "' WHERE username ='" & Session("loginname") & "'"
                             proc = mydb.Execute(sql)
+                            Clear()
                         End If
                     Else
                         lbl_error.Visible = True

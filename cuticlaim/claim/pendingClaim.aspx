@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="editClaim.aspx.vb" Inherits="cuticlaim.editClaim" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="pendingClaim.aspx.vb" Inherits="cuticlaim.pendingClaim" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
-
     <div style="display:none">
         <asp:TextBox ID="hdn_id" runat="server"></asp:TextBox>
         <asp:Button ID="btn_del" runat="server"/>
@@ -37,11 +36,18 @@
                         <asp:TextBox ID="tel1" runat="server" class="form-control" Style="width:200px" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" ReadOnly="true"></asp:TextBox>
                     
                         <label>Claim Category</label>
+                        <asp:TextBox ID="txt_category" runat="server" class="form-control" Style="width:600px" ReadOnly="true"></asp:TextBox>
+
+                        <%--<label>Claim Category</label>
                         <asp:Dropdownlist ID="ddl_category" runat="server" Style="width:300px" CssClass="form-control wow fadeOut" placeholder="Claim Category">
-                        </asp:Dropdownlist>
+                        </asp:Dropdownlist>--%>
 
                         <label>RM</label>
-                        <asp:TextBox ID="valueRM" runat="server" class="form-control" Style="width:300px"></asp:TextBox>
+                        <asp:TextBox ID="valueRM" runat="server" class="form-control" Style="width:300px" ReadOnly="true"></asp:TextBox>
+
+                        <label>Status</label>
+                        <asp:Dropdownlist ID="ddl_status" runat="server" Style="width:300px" CssClass="form-control wow fadeOut" placeholder="Status">
+                        </asp:Dropdownlist>
 
                         <br />
                         <asp:Label ID ="label1" runat ="server"></asp:Label>
@@ -54,7 +60,6 @@
                 <asp:LinkButton runat="server" ID="btnSubmitDetails" class="btn btn-primary" Text="<i class='fa fa-save'></i>Submit"/>
             </div>
         </div>
-        </div>
+    </div>
     <br /><br />
-
 </asp:Content>

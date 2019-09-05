@@ -53,7 +53,7 @@
                     <div class="controls">
                                 
                         <div class="input-group date" style="width: 200px">
-                            <asp:TextBox ID="reqdate" runat="server" class="form-control date-picker" data-date-format="dd-mm-yyyy" data-mask="99-99-9999"
+                            <asp:TextBox ID="reqdate" runat="server" class="form-control date-picker" data-date-format="dd/mm/yyyy" data-mask="99-99-9999"
                             data-bv-label="Claim Category"></asp:TextBox>
                             <%--<input type="text" class="form-control date-picker"/>--%>
                             <div class="input-group-addon">
