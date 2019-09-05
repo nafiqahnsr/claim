@@ -23,6 +23,60 @@ Partial Public Class Site
     Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
     
     '''<summary>
+    '''lnk_1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnk_1 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''lnk_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnk_2 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''lnk_3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnk_3 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''lnk_4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnk_4 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''lnk_5 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnk_5 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''lnk_6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnk_6 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
     '''form1 control.
     '''</summary>
     '''<remarks>

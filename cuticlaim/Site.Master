@@ -40,12 +40,12 @@
     <br />
             <ul>
               <li><a class="active" href="/cuticlaim/Dashboard.aspx">Home</a></li>
-              <li><a href="/claim/claim.aspx">Claim</a></li>
-              <li><a href="/User/addUser.aspx">Register</a></li>
-              <li><a href="/offDay/offDay.aspx">Off Day</a></li>
-              <li><a href="/login.aspx">Log Out</a></li>
-              <li><a href="/claim/claimList.aspx">Claim List</a></li>
-              <li><a href="/User/account.aspx">Account</a></li>
+              <li><asp:hyperlink ID="lnk_1" runat="server"></asp:hyperlink></li>
+              <li><asp:hyperlink ID="lnk_2" runat="server" Enabled="false" Visible="false"></asp:hyperlink></li>
+              <li><asp:hyperlink ID="lnk_3" runat="server"></asp:hyperlink></li>
+              <li><asp:hyperlink ID="lnk_4" runat="server"></asp:hyperlink></li>
+              <li><asp:hyperlink ID="lnk_5" runat="server"></asp:hyperlink></li>
+              <li><asp:hyperlink ID="lnk_6" runat="server"></asp:hyperlink></li>
             </ul>
             <br />
     <form id="form1" runat="server">

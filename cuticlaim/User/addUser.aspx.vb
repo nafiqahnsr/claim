@@ -1,8 +1,15 @@
 ﻿Public Class addUser
     Inherits System.Web.UI.Page
     Dim mydb As New mydb
+    Protected Sub Page_PreInit(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Session("position") <> 9 Then
+            Response.Redirect("/cuticlaim/Dashboard.aspx")
+        End If
+    End Sub
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         div_alert_msg.Visible = False
+
         If Not IsPostBack Then
             Bind_Position_Type("Please Select", "")
         Else

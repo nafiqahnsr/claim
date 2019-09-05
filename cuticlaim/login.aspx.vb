@@ -4,6 +4,7 @@ Public Class login
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
+            If Request("action") = "logout" Then Session.Abandon()
             check_login()
         End If
     End Sub
