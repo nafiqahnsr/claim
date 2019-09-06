@@ -49,6 +49,8 @@
     </div>
 
     <div class="container">
+        <asp:LinkButton runat="server" ID="btn_claimList" class="btn btn-primary" Text="<i class='fa fa-save'></i>Claim List" PostBackUrl="/claim/claimList.aspx"/>
+        <br /><br />
         <div class="row">
             <div class="col-10">
                 <div class="form-group">
@@ -102,6 +104,9 @@
             <div class="col-sm-4">
                 <asp:FileUpload ID="FileUpload1" runat="server" /> 
                 <asp:LinkButton ID="btn_upload" runat="server" class="btn btn-info" OnClick="UploadFile" Text="<i class='fa fa-save'></i>Upload"/>
+            </div>
+            <div class="col-sm-4">
+                <asp:Image ID="img_upload" runat="server"/>
             </div>
         </div>
         <div class="row">

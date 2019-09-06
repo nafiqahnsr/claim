@@ -42,7 +42,10 @@
                         <asp:TextBox ID="staffid" ReadOnly="true" runat="server" class="form-control" Style="width:250px"></asp:TextBox>                       
                                 
                         <label>Position</label>
-                        <asp:TextBox ID="Position1" ReadOnly="true" runat="server" class="form-control" Style="width:250px"></asp:TextBox>
+                        <asp:Dropdownlist ID="ddl_position" runat="server" Style="width:300px" CssClass="form-control wow fadeOut" placeholder="Position"></asp:Dropdownlist>
+
+                        <%--<label>Position</label>
+                        <asp:TextBox ID="Position1" ReadOnly="true" runat="server" class="form-control" Style="width:250px"></asp:TextBox>--%>
 
                         <%--<label>Report To</label>
                         <asp:TextBox ID="rpt_to1" ReadOnly="true" runat="server" class="form-control" Style="width:300px"></asp:TextBox>--%>

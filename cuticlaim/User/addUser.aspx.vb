@@ -2,8 +2,10 @@
     Inherits System.Web.UI.Page
     Dim mydb As New mydb
     Protected Sub Page_PreInit(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If Session("position") <> 9 Then
-            Response.Redirect("/cuticlaim/Dashboard.aspx")
+        If Not Session("position") = 9 Then
+            If Not Session("position") = 1 Then
+                Response.Redirect("/cuticlaim/Dashboard.aspx")
+            End If
         End If
     End Sub
 

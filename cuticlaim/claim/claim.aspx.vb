@@ -41,8 +41,8 @@ Public Class claim
 
             If proc Then
 
-                sql = "INSERT INTO tbl_claim_list (`staff_id`, `request_date`, `claim_category`, `claim_value`, `status`) 
-                VALUES('" & hdn_id.Text & "', '" & rdate & "', " & categoryID & " , '" & valueRM.Text & "' , 'PENDING')"
+                sql = "INSERT INTO tbl_claim_list (`staff_id`, `request_date`, `claim_category`, `claim_value`, `status`, `upload`) 
+                VALUES('" & hdn_id.Text & "', '" & rdate & "', " & categoryID & " , '" & valueRM.Text & "' , '1', '" & Session("uploaded") & "')"
 
                 If Not mydb.Execute(sql) Then
                     Throw New Exception(mydb._errMsg)
@@ -109,11 +109,43 @@ Public Class claim
             Directory.CreateDirectory(folderPath)
         End If
 
+        Dim ext As String = Right(FileUpload1.FileName, 3)
+        If Not ext = "jpg" Then
+            Display_Error_Message(lbl_msg, div_alert_msg, Path.GetFileName(FileUpload1.FileName) + "Invalid file extension.")
+            Exit Sub
+        End If
+
+        Dim img As System.Drawing.Image = System.Drawing.Image.FromStream(FileUpload1.PostedFile.InputStream)
+        Dim height As Integer = img.Height
+        Dim width As Integer = img.Width
+        Dim size As Decimal = Math.Round((CDec(FileUpload1.PostedFile.ContentLength) / CDec(1024)), 2)
+        If size > 100 Then
+            Display_Error_Message(lbl_msg, div_alert_msg, Path.GetFileName(FileUpload1.FileName) + "File size must not exceed 100 KB.")
+        End If
+        If height > 100 OrElse width > 100 Then
+            Display_Error_Message(lbl_msg, div_alert_msg, Path.GetFileName(FileUpload1.FileName) + "Height and Width must not exceed 100px.")
+        End If
+
+
+
         'Save the File to the Directory (Folder).
         FileUpload1.SaveAs(folderPath & Path.GetFileName(FileUpload1.FileName))
 
+        If File.Exists(folderPath & Path.GetFileName(FileUpload1.FileName)) Then
+            img_upload.ImageUrl = Page.ResolveUrl("~/Files/" & FileUpload1.FileName)
+            img_upload.Width = width
+            img_upload.Height = height
+            Dim uploaded As String = folderPath & Path.GetFileName(FileUpload1.FileName)
+            Session("uploaded") = uploaded
+        Else
+            Display_Error_Message(lbl_msg, div_alert_msg, Path.GetFileName(FileUpload1.FileName) + " file not found.")
+        End If
+
         'Display the success message.
         Display_Error_Message(lbl_msg, div_alert_msg, Path.GetFileName(FileUpload1.FileName) + " has been uploaded.")
+
     End Sub
+
+
 
 End Class

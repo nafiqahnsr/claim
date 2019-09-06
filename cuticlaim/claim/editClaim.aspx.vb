@@ -14,7 +14,6 @@
             categoryID = CInt(ddl_category.SelectedValue)
 
             If proc Then
-
                 sql = "UPDATE tbl_claim_list SET claim_category = '" & categoryID & "', claim_value = '" & valueRM.Text & "' WHERE idx =" & hdn_id.Text
                 proc = mydb.Execute(sql)
 

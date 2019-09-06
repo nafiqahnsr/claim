@@ -122,13 +122,13 @@ Partial Public Class editStaff
     Protected WithEvents staffid As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Position1 control.
+    '''ddl_position control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Position1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddl_position As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''tel1 control.

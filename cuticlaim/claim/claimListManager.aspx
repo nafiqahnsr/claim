@@ -45,7 +45,11 @@
                             <asp:BoundField DataField="staff_id" HeaderText="Staff ID" ItemStyle-Width="80px" ItemStyle-HorizontalAlign="Center"/> 
                             <asp:BoundField DataField="request_date" HeaderText="Date" ItemStyle-Width="250" ItemStyle-HorizontalAlign="Center"/>
                             <asp:BoundField DataField="claim_value" HeaderText="RM" ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center"/>
-                            <asp:BoundField DataField="status" HeaderText="Status" ItemStyle-Width="80px" ItemStyle-HorizontalAlign="Center"/>
+                            <asp:TemplateField HeaderText="Status" ItemStyle-Width="200px" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <asp:label ID ="lbl_status" runat="server"></asp:label>
+                                </ItemTemplate> 
+                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="Action" ItemStyle-Width="20px" ItemStyle-HorizontalAlign="Center">
                                 <ItemTemplate>
                                     <asp:HyperLink ID="HyperLink_edit" runat="server"><span class="grid-action-icon glyphicon glyphicon-edit"/> </asp:HyperLink>

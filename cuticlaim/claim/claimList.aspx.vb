@@ -36,9 +36,11 @@
     Private Sub GridView1_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GridView1.RowDataBound
         If e.Row.RowIndex <> -1 Then
             Dim lbl_category As Label = CType(e.Row.FindControl("lbl_category"), Label)
+            Dim lbl_status As Label = CType(e.Row.FindControl("lbl_status"), Label)
             Dim hyperlink_edit As HyperLink = CType(e.Row.FindControl("HyperLink_edit"), HyperLink)
 
             lbl_category.Text = get_Category(e.Row.DataItem("claim_category"))
+            lbl_status.Text = get_Status(e.Row.DataItem("status"))
 
             hyperlink_edit.NavigateUrl = "/claim/editClaim.aspx?id=" & e.Row.DataItem("id")
 
@@ -54,6 +56,17 @@
         category = dt.Rows(0).Item("name").ToString
 
         Return category
+    End Function
+
+    Private Function get_Status(ByVal id As Integer) As String
+        Dim status As String = ""
+        Dim dt As New DataTable()
+
+        Dim sql As String = "SELECT name FROM tbl_claim_status WHERE idx=" & id
+        dt = mydb.Search(sql)
+        status = dt.Rows(0).Item("name").ToString
+
+        Return status
     End Function
 
     Protected Sub btn_del_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_del.Click

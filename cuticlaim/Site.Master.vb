@@ -21,14 +21,12 @@
             lnk_3.NavigateUrl = "/User/account.aspx"
             lnk_3.Text = "Account"
 
-            lnk_4.NavigateUrl = "/login.aspx?action=logout"
-            lnk_4.Text = "Log Out"
+            lnk_4.NavigateUrl = "/claim/claimList.aspx"
+            lnk_4.Text = "Claim List"
+            If Session("position") = 9 Or Session("position") = 1 Then lnk_4.NavigateUrl = "/claim/claimListManager.aspx"
 
-            lnk_5.NavigateUrl = "/claim/claimList.aspx"
-            lnk_5.Text = "claim List"
-
-
-
+            lnk_5.NavigateUrl = "/login.aspx?action=logout"
+            lnk_5.Text = "Log Out"
 
         End If
     End Sub
