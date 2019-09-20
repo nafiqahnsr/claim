@@ -9,7 +9,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-10">
+            <div class="col-md-6 mb-3">
                 <div class="form-group">
                     <%--<asp:HiddenField runat="server" ID="idx" />--%>
                     <asp:Label ID="lbl_error" runat="server"></asp:Label>
@@ -32,6 +32,7 @@
                                 <span class="glyphicon glyphicon-th"></span>
                             </div>
                         </div>  
+
                         <label>Phone Number</label>
                         <asp:TextBox ID="tel1" runat="server" class="form-control" Style="width:200px" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" ReadOnly="true"></asp:TextBox>
                     
@@ -44,21 +45,26 @@
 
                         <label>RM</label>
                         <asp:TextBox ID="valueRM" runat="server" class="form-control" Style="width:300px" ReadOnly="true"></asp:TextBox>
-
+                        <br />
+                        <label>Receipt</label>
+                        <asp:Button ID="Button1" runat="server" OnClick ="Button1_Click" Text="Download" />
+                        <br />
+                        <br />
                         <label>Status</label>
                         <asp:Dropdownlist ID="ddl_status" runat="server" Style="width:300px" CssClass="form-control wow fadeOut" placeholder="Status">
                         </asp:Dropdownlist>
-
                         <br />
                         <asp:Label ID ="label1" runat ="server"></asp:Label>
 
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-12 text-center">
-                <asp:LinkButton runat="server" ID="btnSubmitDetails" class="btn btn-primary" Text="<i class='fa fa-save'></i>Submit"/>
+            <div class="col-md-6 mb-3">
             </div>
+        </div>
+
+        <div class="col-md-12 text-center">
+            <asp:LinkButton runat="server" ID="btnSubmitDetails" class="btn btn-primary" Text="<i class='fa fa-save'></i>Submit"/>
         </div>
     </div>
     <br /><br />

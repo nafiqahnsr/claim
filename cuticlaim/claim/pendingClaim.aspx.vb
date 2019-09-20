@@ -1,6 +1,8 @@
-﻿Public Class pendingClaim
+﻿Imports System.IO
+Public Class pendingClaim
     Inherits System.Web.UI.Page
     Dim mydb As New mydb
+    Dim upld As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -29,7 +31,8 @@
     Public Sub populate()
         Dim dt As New DataTable()
         Dim temp_category As Integer = 0
-        Dim sql As String = "SELECT a.idx as id, b.staff_id, a.request_date, a.claim_category, a.claim_value, b.staff_fullname as fullname, b.staff_phone_num FROM tbl_claim_list a JOIN tbl_staff b ON a.staff_id = b.idx where a.idx = " & hdn_id.Text
+        Dim sql As String = "SELECT a.idx as id, b.staff_id, a.request_date, a.claim_category, a.claim_value, a.upload, b.staff_fullname as fullname, b.staff_phone_num" &
+            " FROM tbl_claim_list a JOIN tbl_staff b ON a.staff_id = b.idx where a.idx = " & hdn_id.Text
         dt = mydb.Search(sql)
 
         If dt.Rows.Count > 0 Then
@@ -39,6 +42,7 @@
             tel1.Text = dt.Rows(0).Item("staff_phone_num")
             temp_category = dt.Rows(0).Item("claim_category")
             valueRM.Text = dt.Rows(0).Item("claim_value")
+            upld = dt.Rows(0).Item("upload")
 
             txt_category.Text = get_Category(temp_category)
 
@@ -84,4 +88,21 @@
         Return category
     End Function
 
+    Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim folderPath As String = Server.MapPath("~/Files/")
+        Dim filePath As String = folderPath & upld
+        Dim file As FileInfo = New FileInfo(filePath)
+
+        If file.Exists Then
+            Response.Clear()
+            Response.AddHeader("Content-Disposition", "attachment; filename=" & file.Name)
+            Response.AddHeader("Content-Length", file.Length.ToString())
+            Response.ContentType = "text/plain"
+            Response.Flush()
+            Response.TransmitFile(file.FullName)
+            Response.[End]()
+        Else
+            label1.Text = "Requested file is not available to download"
+        End If
+    End Sub
 End Class

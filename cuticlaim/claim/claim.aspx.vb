@@ -95,7 +95,7 @@ Public Class claim
 
     Protected Sub UploadFile(sender As Object, e As EventArgs)
         Dim folderPath As String = Server.MapPath("~/Files/")
-
+        Session("uploaded") = FileUpload1.FileName
         If FileUpload1.FileName.Count = 0 Then
             ClientScript.RegisterStartupScript(Me.GetType(), "Popup", "ShowPopup('" & Title & "', 'Please select upload file!');", True)
             'System.Web.UI.ScriptManager.RegisterClientScriptBlock(Page, GetType(Page), "Script", "javascript:alert('Please select upload file!');", True)
@@ -135,8 +135,8 @@ Public Class claim
             img_upload.ImageUrl = Page.ResolveUrl("~/Files/" & FileUpload1.FileName)
             img_upload.Width = width
             img_upload.Height = height
-            Dim uploaded As String = folderPath & Path.GetFileName(FileUpload1.FileName)
-            Session("uploaded") = uploaded
+            'Dim uploaded As String = folderPath & Path.GetFileName(FileUpload1.FileName)
+            'Session("uploaded") = uploaded
         Else
             Display_Error_Message(lbl_msg, div_alert_msg, Path.GetFileName(FileUpload1.FileName) + " file not found.")
         End If

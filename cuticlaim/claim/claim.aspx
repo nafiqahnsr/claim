@@ -22,16 +22,8 @@
             $("#MyPopup").modal("show");
         }
     </script>
-
-  
-  
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
-
-
-
-
     <!-- Column - Content - Row - Alert Message - S -->
     <div class="row" style="margin-top: 0px">
         <div class="col-sm-12">
