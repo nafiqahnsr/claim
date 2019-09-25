@@ -56,11 +56,14 @@
                             <asp:TemplateField HeaderText="Action" ItemStyle-Width="20px" ItemStyle-HorizontalAlign="Center">
                                 <ItemTemplate>
                                     <asp:HyperLink ID="HyperLink_edit" runat="server"><span class="grid-action-icon glyphicon glyphicon-edit"/> </asp:HyperLink>
-                                    <a href="javascript:confirm_delete('<%#DataBinder.Eval(Container.DataItem, "id") %>');"><span class="grid-action-icon glyphicon glyphicon-trash"/></a>
+                                    <a href="javascript:confirm('Confirm delete?');javascript:confirm_delete('<%#DataBinder.Eval(Container.DataItem, "id") %>');"><span class="grid-action-icon glyphicon glyphicon-trash" /></a>
+                                    <%--javascript:confirm_delete('<%#DataBinder.Eval(Container.DataItem, "id") %>');--%>
+                                    <%--sini--%>
                                 </ItemTemplate> 
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
+                    <asp:Label ID="lbl_total" runat="server"></asp:Label>
                 </div>
         </div>
 

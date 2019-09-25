@@ -59,6 +59,15 @@ Partial Public Class claimList
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
+    '''lbl_total control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_total As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''lbl_NoRecord control.
     '''</summary>
     '''<remarks>

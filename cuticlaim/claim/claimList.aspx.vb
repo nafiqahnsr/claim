@@ -108,4 +108,14 @@
 
     End Sub
 
+    'Private Function GetConfirmation() As Boolean
+    '    Dim reply = confirm("Ary you sure you want to delete this?")
+
+    '    If reply Then
+    '        Return True
+    '    Else
+    '        Return False
+    '    End If
+    'End Function
+
 End Class

@@ -94,12 +94,12 @@
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <asp:FileUpload ID="FileUpload1" runat="server" /> 
+                <asp:FileUpload ID="FileUpload1" runat="server" /> <br />
                 <asp:LinkButton ID="btn_upload" runat="server" class="btn btn-info" OnClick="UploadFile" Text="<i class='fa fa-save'></i>Upload"/>
             </div>
-            <div class="col-sm-4">
+            <%--<div class="col-sm-4">
                 <asp:Image ID="img_upload" runat="server"/>
-            </div>
+            </div>--%>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">

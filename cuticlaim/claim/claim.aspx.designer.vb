@@ -140,15 +140,6 @@ Partial Public Class claim
     Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.LinkButton
     
     '''<summary>
-    '''img_upload control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents img_upload As Global.System.Web.UI.WebControls.Image
-    
-    '''<summary>
     '''btnSubmitDetails control.
     '''</summary>
     '''<remarks>
